@@ -2,6 +2,8 @@
 :root{
     --mainColor: #10cab7;
     --secondaryColor:#2c4755;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
 }
 
 /* End Variables */
@@ -119,7 +121,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    background-color: #f6f6f6;
+    background-color: var(--section-background);
     position: absolute;
     right: 0;
     min-width: 200px;
@@ -134,7 +136,7 @@ body {
     content: '';
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent #f6f6f6 transparent;
+    border-color: transparent transparent var(--section-background) transparent;
     position: absolute;
     right: 5px;
     top: -20px;
@@ -190,10 +192,10 @@ body {
 /* End landing Section */
 
 /* Start Feature Section*/
-.features {
-    padding-bottom: 60px;
-    padding-top: 60px;
-    background-color: #f6f6f6;
+.features, .portfolio {
+    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding);
+    background-color: var(--section-background);
 }
 
 .features .container {
@@ -225,10 +227,11 @@ body {
 
 /* Start Services Section*/
 .services {
-    padding-bottom: 60px;
-    padding-top: 60px;
+    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding);
 }
-.services .services-content {
+.services .services-content,
+.portfolio .portfolio-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
@@ -253,11 +256,13 @@ body {
     flex: 1;
 }
 
-.services h3 {
+.services h3,
+.portfolio h3 {
     margin: 0 0 20px;
 }
 
-.services p {
+.services p,
+.portfolio p  {
     color: #777;
     font-weight: 300px;
     line-height: 1.6;
@@ -289,3 +294,17 @@ body {
     }
 }
 /* End Services Section*/
+
+/* Start Portfolios section */
+.portfolio .card {
+    background-color: white;
+}
+
+.portfolio img {
+    width: 100%;
+}
+
+.portfolio .info {
+    padding: 20px;
+}
+/* End Portfolios section */
